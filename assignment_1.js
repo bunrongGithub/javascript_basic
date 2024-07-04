@@ -23,31 +23,15 @@ if(score <= 100 && score > 95){
 }
 
 // 4
-const employees = [
-    {
-        id:1,
-        name:"lora",
-        salary:"500"
-    },
-    {
-        id:2,
-        name:"sok",
-        salary:"1000"
-    },
-    {
-        id:3,
-        name:"sov",
-        salary:"600"
+let salary = [1000, 2000, 120.90]
+let employees = ["Lara", "Evee", "Simi"]
+let employeeSalary = {};
+if(employees.length === salary.length){
+    for(let i = 0 ; i < employees.length ; i++){
+        employeeSalary[employees[i]] = salary[i]
     }
-]
-for(let i = 0 ; i < employees.length ; i++){
-    console.log(
-        employees[i].id + " - " 
-        + " name : " + employees[i].name 
-        + " salary " + employees[i].salary
-    );
+    console.log(employeeSalary);
 }
-
 //5
 const numbers = [1,2,3,4,5,6,7,8,9];
 for(let i = 1 ; i <= numbers.length ; i++){
@@ -104,7 +88,7 @@ const newArray = [];
 for(let i = 1 ; i <= 100 ; i ++){
     newArray.push(i)
 }
-const isPrime = num => {
+const isPrime = (num) => {
   for (let i = 2; i < num; i++) {
     if (num % i === 0) return false;
   }
