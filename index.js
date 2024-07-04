@@ -93,7 +93,7 @@ console.log("FizzBuzz: " + fizzBuzz);
 console.log("Numbers: " + number);
 //8
 let sum = 0;
-for(let i = 0;i < 10;i++){
+for(let i = 1;i <= 10;i++){
     sum+=i;
 }
 console.log(sum);
