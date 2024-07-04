@@ -78,11 +78,11 @@ let fizzBuzz = [];
 let number = [];
 for(let i = 1 ; i <= 100 ; i++){
     if(i % 3 === 0  && i % 5 === 0){
-        fizzBuzz.push(i);
+        fizzBuzz.push("fizzbuzz");
     }else if(i % 3 === 0){
-        fizz.push(i)
+        fizz.push("fizz")
     }else if(i % 5 ===0){
-        buzz.push(i)
+        buzz.push("buzz")
     }else{
         number.push(i)
     }
@@ -100,27 +100,18 @@ console.log(sum);
 
 //9
 
-const isPrime = (num) =>{
-    if(num <= 1) return false;
-    else if (num === 2) true;
-    else if(num % 2 === 0) return false;
-    let check = Math.sqrt(num);
-    for(let i = 3;i <= check;i+=2){
-        if(num % i === 0){
-            return false;
-        }
-    }
-    return true;
+const newArray = [];
+for(let i = 1 ; i <= 100 ; i ++){
+    newArray.push(i)
 }
-const prime = () =>{
-    for(let i = 1 ; i <= 100;i++){
-        if(isPrime(i)){
-            console.log(i);
-        }
-    }
-}
-prime()
-
+const isPrime = num => {
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) return false;
+  }
+  return num !== 1;
+};
+const myPrimeArray = newArray.filter(isPrime);
+console.log(myPrimeArray);
 // 10
 
 const arr_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
