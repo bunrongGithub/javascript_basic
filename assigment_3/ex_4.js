@@ -1,19 +1,23 @@
-const fs = require('fs');
-function writeFileContents(filePath, content, callback) {
-    fs.writeFile(filePath, content, (err) => {
-        if (err) {
+const fs = require("fs")
+function writeFile(filePath , content,callback){
+    fs.writeFile(filePath , content , (err)=>{
+        if(err){
             callback(err);
-        } else {
-            callback(null, `File "${filePath}" has been successfully written.`);
+        }else{
+            callback(null , `File ${filePath} has been write successfully!`)
         }
     });
 }
-const filePath = 'file.txt'; 
-const fileContent = 'Hello, this is the content to be written to the file.';
-writeFileContents(filePath, fileContent, (err, result)=>{
-    if (err) {
-        console.error('Error writing to file:', err);
-    } else {
-        console.log(result);
+const filePath = "newFiles.txt";
+const content  = 'Hello, this is the content to be written to the file.';
+const writeCallBack = (error,result) =>{
+    if(error){
+        console.log(error);
+        return;
+    }else{
+        console.log(result)
     }
-});
+}
+writeFile(filePath , content , writeCallBack)
+
+module.exports = {writeFile}
