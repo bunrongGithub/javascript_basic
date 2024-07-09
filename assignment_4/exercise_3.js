@@ -13,5 +13,5 @@ const person = [
     }
 ]
 
-const newPerson = person.map((value , index)=>value.name)
+const newPerson = person.map((value)=>value.name)
 console.log(newPerson);
