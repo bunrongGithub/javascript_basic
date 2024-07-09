@@ -33,10 +33,7 @@ function readFileContent(filePath , callback){
 const filePath = 'file.txt';
 const handleFileContent = (error,content) =>{
     if(error){
-        console.log(error);
         return;
-    }else{
-        console.log(content);
     }
 }
 readFileContent(filePath , handleFileContent)

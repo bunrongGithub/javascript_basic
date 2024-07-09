@@ -1,1 +1,1 @@
-Second modification: null
+Second modification: First modification: Hello from input.txt
