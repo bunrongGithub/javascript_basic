@@ -1,8 +1,7 @@
 function restObject(objects , ...props){
-    const [b ,d] = [...props]
     const newObject = {};
     for(let key in objects){
-        if(![b].includes(key) && ![d].includes(key)){
+        if(![...props].includes(key)){
             newObject[key] = objects[key];
         }
     }
