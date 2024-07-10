@@ -3,7 +3,5 @@ const person = {
     age:25,
     job:"Developer"
 }
-console.log(person);
-
-const {name , age} = person;
+const {name , age} = {...person};
 console.log(name,age);
