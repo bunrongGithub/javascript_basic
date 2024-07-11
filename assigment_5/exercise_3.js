@@ -6,5 +6,5 @@ const user ={
         city:"PP"
     }
 }
-const {address:{street,city}} = user
+const {address:{street,city}} = {...user}
 console.log(street,city);
