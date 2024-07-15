@@ -39,9 +39,9 @@ function promise() {
 
 /** async / await with promise chain  */
 const readFileAndReadFile = async () =>{
-    await readFileContent("./file.txt" , (e , r)=> {
+    await readFileContent("./file.txt" , async (e , r)=> {
         try {
-            writeFile("newFileContent.txt" , "after reading then writing -> " + r , async (e , d)=>{
+            await writeFile("newFileContent.txt" , "after reading then writing -> \n" + r , async (e , d)=>{
                 const result = await d;
                 return result ? true : false;
             })
