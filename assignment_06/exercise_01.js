@@ -5,25 +5,47 @@ function getUserId(users, id) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             const user = users.find(item => item.id === id);
-            return user ? resolve(user):reject("Null");
+            return user ? resolve(user) : reject("Null");
         }, 2000)
     })
 }
 function capitalize(user) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            if(user){
-                const userCapitalize = {...user , name: user.name.toUpperCase()}
+            if (user) {
+                const userCapitalize = { ...user, name: user.name.toUpperCase() }
                 resolve(userCapitalize)
-            }else{
+            } else {
                 reject("canot get user!")
             }
         }, 1500);
     });
 }
-getUserId(data,1).then(res=>{
-    capitalize(res).then(res=>console.log(res))
-}).catch(err=>error(err))
+
+const updateUserById = (id , {name,age}) => {
+    return new Promise((resolve, rejects) => {
+        try {
+            const userId = data.findIndex(find => find.id === id);
+            if (userId !== -1){
+                data[userId].name = name;
+                data[userId].age = age
+                resolve(data[userId])
+            }
+                //resolve(data.filter(item => (item.id === userId)));
+        } catch (error) {
+            rejects("cannt find user wiht id: " + id)
+        }
+    })
+}
+updateUserById(1,{name:"sook",age:20}).then( r => console.log(r))
+/** 
+getUserId(data, 1).then(async res => {
+    await capitalize(res).then(res => console.log(res))
+}).catch(err => error(err))
+*/
+
+
+
 //getUserId(data,0).then(res=>console.log(res)).catch(err=>console.error("User not found" ,err))
 
 // function getUserInforById(users, userId, callback) {
