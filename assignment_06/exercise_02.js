@@ -2,16 +2,14 @@ const { readFileContent } = require("../assigment_3/ex_3")
 const { writeFile } = require("../assigment_3/ex_4")
 
 /** simple promise */
-
 const getFileContent = () =>{
     return new Promise((resolve,rejects)=>{
         readFileContent("./file.txt" , (e , r)=> e ? rejects(e) : resolve(r))
     })
 }
-getFileContent().then( r => console.log("File content is: " + r)).catch( e => console.error(e))
+//getFileContent().then( r => console.log("File content is: " + r)).catch( e => console.error(e))
 
 /** promise with async / await */
-
 const getFileContentAsync = async () =>{
     await readFileContent("./file.txt" , (e , r)=> {
         try {
@@ -21,7 +19,7 @@ const getFileContentAsync = async () =>{
         }
     })
 }
-getFileContentAsync().then(res => res).catch(e => new Error(e))
+//getFileContentAsync().then(res => res).catch(e => new Error(e))
 /** Promise chain */
 function promise() {
     return new Promise((resolve, rejects) => {
@@ -37,4 +35,18 @@ function promise() {
         }
     })
 }
-promise().then(response => response).catch(err => console.error(err));
+//promise().then(response => response).catch(err => console.error(err));
+
+/** async / await with promise chain  */
+const readFileAndReadFile = async () =>{
+    await readFileContent("./file.txt" , (e , r)=> {
+        try {
+            writeFile("newFileContent.txt" , "after reading " + r , async (e , d)=>{
+                await d;
+            })
+        } catch (error) {
+            e ? console.error(e) : '';
+        }
+    })
+}
+readFileAndReadFile();
