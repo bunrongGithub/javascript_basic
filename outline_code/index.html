@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation Example</title>
+    <style>
+        .outer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 500px;
+            padding: 20px;
+            border: 1px solid black;
+        }
+
+        .inner {
+            max-width: fit-content;
+            margin-inline: auto;
+            padding: 10px;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer" id="outer">
+        Outer Div
+        <div class="inner" id="inner">
+            Inner Div
+        </div>
+    </div>
+    <script>
+        const outerDiv = document.getElementById('outer');
+        const innerDiv = document.getElementById('inner');
+
+        function logEventPhase(event) {
+            console.log(`${event.type} event - Target: 
+                ${event.target.id}, Current Target: ${event.currentTarget.id}`);
+        }
+        outerDiv.addEventListener('click', logEventPhase, true);  // Capture phase
+        innerDiv.addEventListener('click', logEventPhase, true);  // Capture phase
+        outerDiv.addEventListener('click', logEventPhase, false); // Bubbling phase
+        innerDiv.addEventListener('click', logEventPhase, false); // Bubbling phase
+    </script>
+</body>
+</html>
