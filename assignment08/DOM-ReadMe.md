@@ -42,5 +42,5 @@ it's a programming interface that allows us to create , change , or remove eleme
             After reaching the target, the event propagates back up to the root.
             During this phase, event listeners set for bubbling are executed.
 
-### Thanks
+### Thanks!!!!
 
