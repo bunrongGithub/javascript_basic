@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { TodoListHeading } from "./TodoListHeading";
 import { TodoContent } from "./TodoContent";
 import { todosForm } from "./todoFormTypes";
@@ -6,6 +6,7 @@ import { todosForm } from "./todoFormTypes";
 export const TodoFormLayout = () => {
   const [todos, setTodos] = useState<todosForm[]>([]);
   const [task, setTask] = useState<string>("");
+  const focuse = useRef<HTMLInputElement>(null);
   const onCompleted = (index: number) => {
     const updateTodos = todos.map((todo, i) =>
       i === index ? { ...todo, isComplete: !todo.isComplete } : todo
@@ -17,6 +18,7 @@ export const TodoFormLayout = () => {
     setTodos(filterTodos);
   };
   const onAdd = () => {
+    focuse.current?.focus()
     if (task.trim() === "") return;
     setTodos([...todos, { text: task, isComplete: false }]);
     setTask("");
@@ -25,6 +27,7 @@ export const TodoFormLayout = () => {
     <div className="flex items-center justify-center bg-teal-lightest font-sans relative top-20">
       <div className="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
         <TodoListHeading
+        reference={focuse}
           task={task}
           setTask={setTask}
           onAdd={onAdd}

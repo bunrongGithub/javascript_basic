@@ -5,8 +5,8 @@ import { FaPlusSquare } from 'react-icons/fa';
 
 interface TodoListProps {
   handleAddTask: (task: string) => void;
+  handleRemoveTask: (id: number) => void;
 }
-
 const TodoList: React.FC<TodoListProps> = ({ handleAddTask }) => {
   const [newTask, setNewTask] = useState('');
 
