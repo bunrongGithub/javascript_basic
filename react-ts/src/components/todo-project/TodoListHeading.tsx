@@ -1,3 +1,5 @@
+import { FaPlusSquare } from "react-icons/fa";
+
 type headingType = {
     content?: string;
     task?: string;
@@ -19,7 +21,7 @@ export const TodoListHeading: React.FC<headingType> = ({ content, task,reference
                     value={task}
                     onChange={(e) => setTask && setTask(e.target.value)}
                 />
-                <button onClick={onAdd} className="flex-no-shrink p-2 border-2 rounded text-teal border-teal hover:text-white hover:bg-teal">Add</button>
+                <button onClick={onAdd} className="flex-no-shrink p-1 border-2 rounded text-teal border-teal hover:text-white hover:bg-teal"><FaPlusSquare className="text-blue-600 size-7 "/></button>
             </div>
         </div>
     );

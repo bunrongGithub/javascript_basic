@@ -3,7 +3,6 @@ export type UserFormInputs = {
     password: string;
     confirmPassword: string;
   };
-  
 export type InputFieldProps = {
     label?: string;
     inputType?: string;

@@ -1,46 +1,57 @@
 import { useRef, useState } from "react";
+import useTodo from "./useTodo"; // Adjust the import path
 import { TodoListHeading } from "./TodoListHeading";
 import { TodoContent } from "./TodoContent";
 import { todosForm } from "./todoFormTypes";
-
 export const TodoFormLayout = () => {
-  const [todos, setTodos] = useState<todosForm[]>([]);
+  const { todos, addTodo, removeTodo, toggleTodo,editeTodo } = useTodo();
   const [task, setTask] = useState<string>("");
+  const [isLoading,setIsLoading] = useState<boolean>(false);
   const focuse = useRef<HTMLInputElement>(null);
-  const onCompleted = (index: number) => {
-    const updateTodos = todos.map((todo, i) =>
-      i === index ? { ...todo, isComplete: !todo.isComplete } : todo
-    );
-    setTodos(updateTodos);
+  const onCompleted = (id: number) => {
+    toggleTodo(id);
   };
-  const onRemove = (index: number) => {
-    const filterTodos = todos.filter((_, i) => i !== index);
-    setTodos(filterTodos);
+  const onHandleEdit = (id:number)=>{
+    //editeTodo(id)
+  }
+  const onRemove = (id: number) => {
+    removeTodo(id);
   };
+
   const onAdd = () => {
-    focuse.current?.focus()
+  const insertId = Number(todos[todos.length - 1].id) + 1
     if (task.trim() === "") return;
-    setTodos([...todos, { text: task, isComplete: false }]);
+    const newTodo: todosForm = {id:insertId ,  title: task, isComplete: false };
+    setIsLoading(true)
+    addTodo(newTodo);
+    setIsLoading(false)
     setTask("");
+    focuse.current?.focus();
   };
+  if(isLoading) return <p>Loading</p>
   return (
     <div className="flex items-center justify-center bg-teal-lightest font-sans relative top-20">
       <div className="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
         <TodoListHeading
-        reference={focuse}
+          reference={focuse}
           task={task}
           setTask={setTask}
           onAdd={onAdd}
           content="Todo List"
         />
         <div>
-          {todos.map((todo, index) => (
+          
+          {isLoading ? <p>loading</p> : 
+          todos.map((todo, index) => (
             <TodoContent
               key={index}
-              text={todo.text}
+              text={todo.title}
               isComplete={todo.isComplete}
-              onComplete={() => onCompleted(index)}
-              onRemove={() => onRemove(index)}
+              onComplete={() => onCompleted(todo.id)}
+              onRemove={() => onRemove(todo.id)}
+              onEdite={()=> onHandleEdit(todo.id)}
+              onHandleChange={(e) =>console.log( e.target.value)
+              }
             />
           ))}
         </div>

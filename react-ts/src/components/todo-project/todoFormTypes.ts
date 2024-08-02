@@ -4,8 +4,11 @@ export type contentType = {
     onRemove?: () => void;
     index?: number;
     isComplete?: boolean;
+    onEdite?:() => void;
+    onHandleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 export type todosForm = {
-    text?: string;
+    id:number
+    title?: string;
     isComplete?: boolean;
   };
