@@ -1,6 +1,8 @@
 import { FaSearch, FaPlus, FaFilter } from "react-icons/fa";
 import { useRef } from "react";
+import { useToggle } from "./useToggle";
 const Header = () => {
+  const [isToggle,setIsToggle]: any = useToggle();
   const focus = useRef<HTMLInputElement>(null);
   return (
     <div className="w-full m-auto text-center mb-[10px] flex justify-between align-middle mt-2 ">
@@ -22,7 +24,7 @@ const Header = () => {
       </div>
     </div>
     <div className="border flex justify-center align-middle p-1 bg-slate-50 rounded-[5px]">
-      <FaPlus className="text-2xl cursor-pointer size-8 p-1 pt-3 text-slate-700" />
+      <FaPlus onClick={()=>setIsToggle(!isToggle)} className="text-2xl cursor-pointer size-8 p-1 pt-3 text-slate-700" />
     </div>
   </div>
   )
