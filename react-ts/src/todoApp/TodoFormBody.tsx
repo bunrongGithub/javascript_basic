@@ -4,8 +4,8 @@ import { FaSave } from "react-icons/fa";
 interface TodoFormProps {
   title?: string;
   description?: string; // Fixed typo here
-  status?: { value: number; label: string }[];
-  level?: { value: number; label: string }[];
+  status?: { value: number; label: string }[] | any;
+  level?: { value: number; label: string }[] | any;
   selectStatus?:string
   onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>| any) => void;
 }
@@ -43,7 +43,7 @@ const TodoFormBody: React.FC<TodoFormProps> = ({
         className="w-full p-2 mb-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
       >
         <option value="">Status</option>
-        {status&&status?.map((item , idex) => (
+        {status&&status?.map((item:any , idex:any) => (
           <option key={idex} value={item?.value}>{item?.label}</option>
         ))}
         
@@ -54,7 +54,7 @@ const TodoFormBody: React.FC<TodoFormProps> = ({
         className="w-full p-2 mb-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
       >
         <option value="">Level</option>
-        {level&&level.map(({ value, label }) => (
+        {level&&level.map(({ value, label }: any) => (
           <option key={value} value={value}>
             {label}
           </option>
