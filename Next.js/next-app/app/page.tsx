@@ -1,39 +1,33 @@
-'use client'
-import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
+import BarIcon from "./ui/BarIcon";
+import PaperPlaneIcon from "./ui/PaperPlaneIcon";
+
 export default function Home() {
-  const [data,setData] = useState(null)
   return (
-    <main className="flex min-h-screen flex-col p-6">
-      <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52 ">
-      </div>
-      <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
-        <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-2/5 md:px-20">
-          <p className={`text-xl text-gray-800 md:text-3xl md:leading-normal`}>
-            <strong>Welcome to Acme.</strong> This is the example for the{' '}
-            <a href="https://nextjs.org/learn/" className="text-blue-500">
-              Next.js Learn Course
-            </a>
-            , brought to you by Vercel.
-          </p>
-          <Link
-            href="/login"
-            className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
-          >
-            <span>Log in</span> 
-          </Link>
-        </div>
-        <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
-          <Image 
-            src='../public/next.svg'
-            width={1000}
-            height={760}
-            className="hidden md:block"
-            alt="dddddd"
-          />
+    <section className="w-full  p-4 md:p-6 lg:p-8">
+      <div className="w-full max-w-4xl mx-auto p-5 mt-10 text-center">
+        <span
+          style={{ lineHeight: "1.4", wordSpacing: "10px", textShadow: "0px 2px 2px rgba(66, 68, 90, 1)" }}
+          className="text-4xl md:text-5xl lg:text-6xl text-blue-800 hover:text-blue-900 transition-all font-bold"
+        >
+          Build websites even faster with components on top of Tailwind CSS
+        </span>
+        <p
+          style={{ lineHeight: "1.5" }}
+          className="font-light p-2 mt-5 text-base md:text-lg lg:text-xl text-gray-500"
+        >
+          Start developing with an open-source library of over 600+ UI components, sections, and pages built with the utility classes from Tailwind CSS and designed in Figma.
+        </p>
+        <div className="mt-10 flex flex-col md:flex-row justify-center items-center gap-4">
+          <button className="px-4 py-2 bg-blue-700 text-white font-bold rounded-md flex items-center space-x-2">
+            <PaperPlaneIcon classe="text-white" />
+            <span>Get Started</span>
+          </button>
+          <button className="px-4 py-2 bg-gray-200 border border-gray-400 text-gray-900 font-light rounded-md flex items-center space-x-2">
+            <BarIcon />
+            <span>Explore Product</span>
+          </button>
         </div>
       </div>
-    </main>
+    </section>
   );
 }

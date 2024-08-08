@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import './ui/globals.css';
+import Navbar from "./navbar/Navbar";
+import Footer from "./footer/Footer";
+import MapIcon from "./ui/MapIcon";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +20,61 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <link
+          rel="stylesheet"
+          data-purpose="Layout StyleSheet"
+          title="Web Awesome"
+          href="/css/app-wa-09b459cf485d4b1f3304947240314c05.css?vsn=d"
+        />
+
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
+        />
+
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css"
+        />
+
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css"
+        />
+
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css"
+        />
+
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css"
+        />
+
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css"
+        />
+
+      </head>
+
+      <body className={inter.className}>
+        <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-10">
+          <div className="w-full flex items-center justify-center p-2 font-extralight">
+            <MapIcon />
+            <Link href='#' className="text-slate-700 mx-2 hover:text-blue-500 transition-all">
+              123 street address cambodia
+            </Link>
+          </div>
+          <Navbar />
+        </nav>
+        <div className="pt-20 min-h-[calc(82vh-4rem)] text-center m-auto">
+          {children}
+        </div>
+        <Footer />
+      </body>
     </html>
   );
 }

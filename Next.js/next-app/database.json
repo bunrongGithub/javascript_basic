@@ -1,0 +1,194 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Wireless Mouse",
+            "desc": "lorem ddkkskdskddskskkd",
+            "category": "Electronics",
+            "price": 25.99,
+            "inStock": true,
+            "rating": 4.7,
+            "image": "https://s3.ap-southeast-1.amazonaws.com/uploads-store/uploads/all/x9nDbE3wzWWi2smwDTDHNDcXXfJaI9vi80uklJSH.png"
+        },
+        {
+            "id": 2,
+            "name": "Bluetooth Headphones",
+            "desc": "lorem ddkkskdskddskskkd",
+            "category": "Electronics",
+            "price": 89.99,
+            "inStock": true,
+            "rating": 4.5,
+            "image": "https://morpheus360.com/cdn/shop/products/HP9550HDSidecopy.png?v=1629469208&width=1946"
+        },
+        {
+            "id": 3,
+            "name": "Smartphone",
+            "desc": "lorem ddkkskdskddskskkd",
+            "category": "Electronics",
+            "price": 499.99,
+            "inStock": false,
+            "rating": 4.3,
+            "image": "https://puri.sm/wp-content/uploads/2023/02/l5-v1-front-3-shadow-cropped-1.png"
+        },
+        {
+            "id": 4,
+            "name": "Laptop",
+            "desc": "lorem ddkkskdskddskskkd",
+            "category": "Electronics",
+            "price": 999.99,
+            "inStock": true,
+            "rating": 4.6,
+            "image": "https://puri.sm/wp-content/themes/wp-purism/images/librem-14-comparison-cropped.png"
+        },
+        {
+            "id": 5,
+            "name": "Coffee Maker",
+            "desc": "lorem ddkkskdskddskskkd",
+            "category": "Appliances",
+            "price": 59.99,
+            "inStock": true,
+            "rating": 4.2,
+            "image": "https://www.kitchenkapers.com/cdn/shop/products/oxo-brew-8-cup-coffee-maker-side-view_512x448.png?v=1605735149"
+        },
+        {
+            "id": 6,
+            "name": "Air Fryer",
+            "desc": "lorem ddkkskdskddskskkd",
+            "category": "Appliances",
+            "price": 120.00,
+            "inStock": false,
+            "rating": 4.8,
+            "image": "https://i5.walmartimages.com/seo/Ninja-4QT-Air-Fryer-Black-AF100WM_0907e796-99b3-4021-938b-9a2a44a12ab2.13d1211bf2d0ac49e5bd757201e593c7.png"
+        },
+        {
+            "id": 7,
+            "name": "Vacuum Cleaner",
+            "desc": "lorem ddkkskdskddskskkd",
+            "category": "Appliances",
+            "price": 229.99,
+            "inStock": true,
+            "rating": 4.1,
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdTO6a6ehth4Xxck6UPyOeIbVWVfpyUb1lZct2816JatYIRu9HcnEOETPv-3DkMUinp44&usqp=CAU"
+        },
+        {
+            "id": 8,
+            "name": "LED TV",
+            "desc": "lorem ddkkskdskddskskkd",
+            "category": "Electronics",
+            "price": 649.99,
+            "inStock": true,
+            "rating": 4.4,
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVJ2BXSi1Xb7Xp8nzpezOby48PXVSWcQ1Hkw&s"
+        },
+        {
+            "id": 9,
+            "name": "Blender",
+            "desc": "lorem ddkkskdskddskskkd",
+            "category": "Appliances",
+            "price": 34.99,
+            "inStock": true,
+            "rating": 4.3,
+            "image": "https://img.freepik.com/premium-psd/blender-isolated-transparent-background_84443-3626.jpg"
+        },
+        {
+            "id": 10,
+            "name": "Digital Camera",
+            "desc": "lorem ddkkskdskddskskkd",
+            "category": "Electronics",
+            "price": 299.99,
+            "inStock": true,
+            "rating": 4.5,
+            "image": "https://images.unsplash.com/photo-1486492440844-ebc195542a40?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }
+    ],
+    "person": [
+        {
+            "name": "John Doe",
+            "age": 30,
+            "imageLink": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "email": "johndoe@example.com",
+            "desc":"If you care for your time, I hands down would go with this.",
+            "job":"CTO at Google",
+            "title":"Efficient Collaborating",
+            "address": {
+                "street": "123 Main St",
+                "city": "Anytown",
+                "state": "CA",
+                "zipCode": "12345",
+                "country": "USA"
+            },
+            "phoneNumbers": "+1-555-123-4567",
+            "socialProfiles": {
+                "facebook": "https://facebook.com/johndoe",
+                "twitter": "https://twitter.com/johndoe",
+                "linkedin": "https://linkedin.com/in/johndoe"
+            }
+        },
+        {
+            "name": "sok",
+            "age": 30,
+            "imageLink": "https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg",
+            "email": "johndoe@example.com",
+            "desc":"Designing with Figma components that can be easily translated to the utility classes of Tailwind CSS is a huge timesaver!",
+            "job":"Developer at Open AI",
+            "title":"Very easy this was to integrate",
+            "address": {
+                "street": "123 Main St",
+                "city": "Anytown",
+                "state": "CA",
+                "zipCode": "12345",
+                "country": "USA"
+            },
+            "phoneNumbers": "+1-555-123-4567",
+            "socialProfiles": {
+                "facebook": "https://facebook.com/johndoe",
+                "twitter": "https://twitter.com/johndoe",
+                "linkedin": "https://linkedin.com/in/johndoe"
+            }
+        },
+        {
+            "name": "John Doe",
+            "age": 30,
+            "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9CYtAbEuSRLJJSMnwPQ1nWPglA4UQvRtbFZWm1KO48hqk-L-UNu4xmrlcb0gZeY8e4i8&usqp=CAU",
+            "email": "johndoe@example.com",
+            "desc":"Aesthetically, the well designed components are beautiful and will undoubtedly level up your next application.",
+            "job":"Software Engineer at Facebook",
+            "title":"Mindblowing workflow",
+            "address": {
+                "street": "123 Main St",
+                "city": "Anytown",
+                "state": "CA",
+                "zipCode": "12345",
+                "country": "USA"
+            },
+            "phoneNumbers": "+1-555-123-4567",
+            "socialProfiles": {
+                "facebook": "https://facebook.com/johndoe",
+                "twitter": "https://twitter.com/johndoe",
+                "linkedin": "https://linkedin.com/in/johndoe"
+            }
+        },
+        {
+            "name": "John Doe",
+            "age": 30,
+            "imageLink": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "email": "johndoe@example.com",
+            "desc":"You have many examples that can be used to create a fast prototype for your team.",
+            "job":"Lead designer at Dropbox",
+            "title":"Solid foundation for any project",
+            "address": {
+                "street": "123 Main St",
+                "city": "Anytown",
+                "state": "CA",
+                "zipCode": "12345",
+                "country": "USA"
+            },
+            "phoneNumbers": "+1-555-123-4567",
+            "socialProfiles": {
+                "facebook": "https://facebook.com/johndoe",
+                "twitter": "https://twitter.com/johndoe",
+                "linkedin": "https://linkedin.com/in/johndoe"
+            }
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+export default interface Person{
+    name:string;
+    age:number;
+    imageLink:string;
+    email:string;
+    desc:string;
+    job:string;
+    title:string
+    address:{
+        street:string;
+        city:string;
+        state:string;
+        zipCode:string;
+        country:string;
+    };
+    phoneNumbers:string;
+    socialProfiles:{
+        facebook:string;
+        twitter:string;
+        linkedin:string;
+    }
+}
